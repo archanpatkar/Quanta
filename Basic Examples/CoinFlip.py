@@ -10,16 +10,15 @@ Flip.h(coin)
 Flip.measure(coin, output)
 
 def Coin_Flip():
-    result = CoinFlipper.execute('Flip')
+    result = CoinFlipper.execute('Flip',shots=1)
     result = result.get_counts('Flip')
-    if(result["0"] > result["1"]):
-        print("Tails")
-        return False
-    elif(result["1"] > result["0"]):
+    if result.get("1"):
         print("Heads")
         return True
     else:
-        print("Try Again!")
+        print("Tails")
+        return False
+    
 
 print("-----------")
 print(Coin_Flip())
