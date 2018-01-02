@@ -15,10 +15,6 @@ Game.h(Prisoners[1])
 Game.measure(Prisoners[0], Outcome[0])
 Game.measure(Prisoners[1], Outcome[1])
 
-class Decision(Enum):
-    Cooperate = "0"
-    Defects = "1"
-
 def QPrisonerDilemma(iterations):
     result = PrisonerDilemma.execute('Game',shots=iterations)
     result = result.get_counts('Game')
